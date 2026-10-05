@@ -1,0 +1,94 @@
+﻿/* AchievementsSection.css */
+.achievements { background: var(--color-warm-bg); overflow: hidden; padding: 0; }
+
+.achievements__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+
+/* Text */
+.achievements__text {
+  padding: 5rem 4rem 5rem 0;
+  padding-left: calc((100vw - var(--container-max)) / 2 + 1.5rem);
+}
+
+.achievements__text .eyebrow { display: block; margin-bottom: 1rem; }
+.achievements__heading { color: var(--color-navy); margin-bottom: 1.25rem; }
+.achievements__desc { color: var(--color-text-muted); margin-bottom: 1.75rem; }
+
+.achievements__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.achievements__list li {
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.achievements__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+/* Image */
+.achievements__image-col {
+  position: relative;
+}
+
+.achievements__img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+}
+
+.achievements__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.achievements__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(248, 246, 240, 0.4) 0%, transparent 30%);
+}
+
+.achievements__img-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  background: rgba(15, 32, 68, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+}
+
+.achievements__caption-text {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .achievements__inner { grid-template-columns: 1fr; }
+  .achievements__text { padding: 3.5rem 1.5rem; }
+  .achievements__image-col { order: -1; }
+  .achievements__img { min-height: 300px; }
+}

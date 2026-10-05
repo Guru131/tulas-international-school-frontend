@@ -1,0 +1,96 @@
+﻿/* SportsSection.css */
+.sports { }
+.sports__heading-accent { color: var(--color-gold); }
+
+/* Scroll controls */
+.sports__scroll-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.sports__scroll-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-navy);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.sports__scroll-btn:hover {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+/* Track */
+.sports__track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-inline: 1.5rem;
+  padding-bottom: 1.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  max-width: 100vw;
+}
+
+.sports__track::-webkit-scrollbar { display: none; }
+
+/* Card */
+.sport-card {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+}
+
+.sport-card__img {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  cursor: pointer;
+}
+
+.sport-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.sport-card__img:hover img { transform: scale(1.1); }
+
+.sport-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 20, 50, 0.85) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sport-card__img:hover .sport-card__overlay { opacity: 1; }
+
+.sport-card__name {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+}
+
+/* Show name always on mobile */
+@media (max-width: 768px) {
+  .sport-card { flex: 0 0 160px; }
+  .sport-card__overlay { opacity: 1; }
+}

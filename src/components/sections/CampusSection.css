@@ -1,0 +1,62 @@
+﻿/* CampusSection.css */
+.campus {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.campus__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.campus__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.campus__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 20, 50, 0.88) 0%,
+    rgba(10, 20, 50, 0.5) 60%,
+    rgba(10, 20, 50, 0.1) 100%
+  );
+}
+
+.campus__content {
+  position: relative;
+  z-index: 1;
+  padding-block: 5rem;
+  max-width: 640px;
+}
+
+.campus__eyebrow {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.campus__heading {
+  color: var(--color-white);
+  margin-bottom: 1.25rem;
+}
+
+.campus__sub {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2.5rem;
+}
+
+.campus__cta { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+@media (max-width: 640px) {
+  .campus { min-height: 480px; }
+  .campus__overlay {
+    background: rgba(10, 20, 50, 0.7);
+  }
+}
