@@ -1,4 +1,4 @@
-﻿/* =============================================================
+/* =============================================================
    index.css — Global Design System for TIS Frontend
    Design tokens, typography, utilities, and resets
    ============================================================= */
@@ -46,7 +46,31 @@
 /* ── Reset & Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold) var(--color-navy);
+}
+
+/* ── Branded Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 9999px;
+  border: 2px solid var(--color-navy);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-light);
+}
 
 body {
   font-family: var(--font-body);

@@ -1,4 +1,4 @@
-﻿// src/components/sections/AdmissionsCTA.jsx
+// src/components/sections/AdmissionsCTA.jsx
 // Strong conversion section, visually distinct from hero.
 
 import ScrollReveal from "../animation/ScrollReveal";
@@ -11,9 +11,12 @@ export default function AdmissionsCTA() {
     <section className="admissions-cta section" id="admissions" aria-labelledby="admissions-heading">
       <div className="admissions-cta__bg" aria-hidden="true">
         <img
-          src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80"
+          src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&q=80"
           alt=""
           loading="lazy"
+          onError={(e) => {
+            e.currentTarget.src = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&q=80";
+          }}
         />
         <div className="admissions-cta__overlay" />
       </div>

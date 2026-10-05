@@ -1,0 +1,389 @@
+/* FloatingSupport.css */
+
+/* Floating Container */
+.floating-support {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  pointer-events: none; /* children enable pointer-events */
+}
+
+/* Common button style */
+.floating-btn {
+  pointer-events: auto;
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(12, 27, 51, 0.24);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  outline: none;
+}
+
+.floating-btn:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* Scroll To Top */
+.floating-btn--scroll {
+  width: 44px;
+  height: 44px;
+  background: var(--color-white);
+  color: var(--color-navy);
+  border: 1.5px solid rgba(12, 27, 51, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.floating-btn--scroll:hover {
+  background: var(--color-navy);
+  color: var(--color-gold);
+}
+
+/* WhatsApp Button */
+.floating-btn--whatsapp {
+  background: #25D366;
+  color: #ffffff;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+}
+
+.floating-btn--whatsapp:hover {
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* WhatsApp Pulse Radar Ring */
+.floating-btn__pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: wa-pulse 2s infinite ease-out;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@keyframes wa-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Helpdesk Button */
+.floating-btn--help {
+  background: linear-gradient(135deg, var(--color-navy) 0%, #172c52 100%);
+  color: var(--color-gold);
+  border: 1.5px solid rgba(201, 168, 76, 0.4);
+  box-shadow: 0 6px 24px rgba(12, 27, 51, 0.35);
+}
+
+.floating-btn--help.is-active {
+  background: var(--color-gold);
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.floating-btn--help:hover {
+  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.4);
+}
+
+/* Online status dot on Help button */
+.floating-btn__badge {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 2px solid var(--color-white);
+}
+
+/* Hover tooltips */
+.floating-btn__tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  white-space: nowrap;
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.floating-btn:hover .floating-btn__tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================================
+   Helpdesk Modal / Flyout
+   ============================================================ */
+.helpdesk-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 24px;
+  background: rgba(12, 27, 51, 0.4);
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+}
+
+.helpdesk-modal {
+  width: 100%;
+  max-width: 380px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(12, 27, 51, 0.3);
+  border: 1px solid rgba(12, 27, 51, 0.1);
+  overflow: hidden;
+  margin-bottom: 76px; /* Sits comfortably above the floating buttons */
+}
+
+/* Header */
+.helpdesk-modal__header {
+  background: var(--color-navy);
+  padding: 1.25rem 1.25rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.helpdesk-modal__status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.helpdesk-modal__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.helpdesk-modal__title {
+  color: var(--color-white);
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+.helpdesk-modal__close {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--color-white);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.helpdesk-modal__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Body */
+.helpdesk-modal__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.helpdesk-modal__intro {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Action Cards */
+.helpdesk-modal__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.helpdesk-action-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-warm-bg, #fbf9f4);
+  border: 1px solid rgba(12, 27, 51, 0.08);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.helpdesk-action-card:hover {
+  background: #ffffff;
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 12px rgba(12, 27, 51, 0.08);
+  transform: translateY(-1px);
+}
+
+.helpdesk-action-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.helpdesk-action-icon--phone {
+  background: rgba(12, 27, 51, 0.1);
+  color: var(--color-navy);
+}
+
+.helpdesk-action-icon--wa {
+  background: rgba(37, 211, 102, 0.12);
+  color: #25D366;
+}
+
+.helpdesk-action-icon--mail {
+  background: rgba(201, 168, 76, 0.15);
+  color: #b08d32;
+}
+
+.helpdesk-action-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.helpdesk-action-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.helpdesk-action-val {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.helpdesk-action-arrow {
+  color: var(--color-text-muted);
+}
+
+/* Fast Enquiry Form Button */
+.helpdesk-modal__form-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: var(--color-gold);
+  color: var(--color-navy);
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.25);
+}
+
+.helpdesk-modal__form-btn:hover {
+  background: var(--color-gold-light, #dfbf68);
+  transform: translateY(-1px);
+}
+
+/* Footer note */
+.helpdesk-modal__footer-note {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(12, 27, 51, 0.06);
+}
+
+/* ============================================================
+   Responsive Adjustments
+   ============================================================ */
+@media (max-width: 768px) {
+  .floating-support {
+    bottom: 16px;
+    right: 16px;
+    gap: 10px;
+  }
+
+  .floating-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .floating-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .floating-btn--scroll {
+    width: 40px;
+    height: 40px;
+  }
+
+  .floating-btn__tooltip {
+    display: none; /* Hide hover tooltip on touch devices */
+  }
+
+  .helpdesk-backdrop {
+    padding: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .helpdesk-modal {
+    margin-bottom: 0;
+    max-width: 100%;
+  }
+}

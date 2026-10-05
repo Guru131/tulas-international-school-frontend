@@ -1,12 +1,13 @@
-﻿// src/data/tisData.js
+// src/data/tisData.js
 // All repeated/structured content lives here to keep components clean.
 
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Academics", href: "#academics" },
-  { label: "Boarding Life", href: "#boarding" },
-  { label: "Beyond Academics", href: "#beyond" },
+  { label: "Boarding", href: "#boarding" },
   { label: "Sports", href: "#sports" },
+  { label: "Beyond", href: "#beyond" },
+  { label: "Campus Life", href: "#campus" },
   { label: "Admissions", href: "#admissions" },
   { label: "Contact", href: "#contact" },
 ];
@@ -105,22 +106,22 @@ export const boardingFeatures = [
 ];
 
 export const sports = [
-  { id: "archery", name: "Archery", image: "https://images.unsplash.com/photo-1607624572895-8bcecab24c46?w=400&q=80" },
-  { id: "swimming", name: "Swimming", image: "https://images.unsplash.com/photo-1560090995-01632a28895b?w=400&q=80" },
-  { id: "football", name: "Football", image: "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=400&q=80" },
-  { id: "basketball", name: "Basketball", image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=80" },
-  { id: "cricket", name: "Cricket", image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&q=80" },
-  { id: "tennis", name: "Lawn Tennis", image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=400&q=80" },
-  { id: "badminton", name: "Badminton", image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=400&q=80" },
-  { id: "hockey", name: "Hockey", image: "https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?w=400&q=80" },
-  { id: "volleyball", name: "Volleyball", image: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=400&q=80" },
-  { id: "taekwondo", name: "Taekwondo", image: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=400&q=80" },
-  { id: "cycling", name: "Cycling", image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&q=80" },
-  { id: "squash", name: "Squash", image: "https://images.unsplash.com/photo-1630589164066-0c11d2f74ab2?w=400&q=80" },
-  { id: "tabletennis", name: "Table Tennis", image: "https://images.unsplash.com/photo-1569403959894-ec04e1bc7659?w=400&q=80" },
-  { id: "horseriding", name: "Horse Riding", image: "https://images.unsplash.com/photo-1553284965-5dd9a97e5f79?w=400&q=80" },
-  { id: "billiards", name: "Billiards", image: "https://images.unsplash.com/photo-1615459882456-1e96e72d9d49?w=400&q=80" },
-  { id: "yoga", name: "Yoga", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&q=80" },
+  { id: "archery", name: "Archery", category: "Olympic", image: "https://images.unsplash.com/photo-1579298245158-33e8f568f7d3?w=500&q=80", facility: "10m & 30m Standard Range" },
+  { id: "swimming", name: "Swimming", category: "Aquatics", image: "https://images.unsplash.com/photo-1560090995-01632a28895b?w=500&q=80", facility: "All-Weather Half Olympic Pool" },
+  { id: "football", name: "Football", category: "Outdoor", image: "https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=500&q=80", facility: "FIFA-Regulation Natural Turf Field" },
+  { id: "basketball", name: "Basketball", category: "Courts", image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&q=80", facility: "Floodlit Synthetic Hard Courts" },
+  { id: "cricket", name: "Cricket", category: "Outdoor", image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=500&q=80", facility: "Full-Size Oval with Practice Nets" },
+  { id: "tennis", name: "Lawn Tennis", category: "Courts", image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=500&q=80", facility: "DecoTurf Championship Courts" },
+  { id: "badminton", name: "Badminton", category: "Indoor", image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500&q=80", facility: "Indoor Wooden Flooring Complex" },
+  { id: "hockey", name: "Hockey", category: "Outdoor", image: "https://images.unsplash.com/photo-1580748141549-71748dbe0bdc?w=500&q=80", facility: "Dedicated Turf Field" },
+  { id: "volleyball", name: "Volleyball", category: "Courts", image: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=500&q=80", facility: "Outdoor Sand & Hard Courts" },
+  { id: "taekwondo", name: "Taekwondo", category: "Martial Arts", image: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=500&q=80", facility: "Certified Dojang with Mats" },
+  { id: "cycling", name: "Cycling", category: "Outdoor", image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=500&q=80", facility: "Himalayan Foothill Trail Track" },
+  { id: "squash", name: "Squash", category: "Indoor", image: "https://images.unsplash.com/photo-1558365849-6ebd8b0454b2?w=500&q=80", facility: "Glass-Back International Court" },
+  { id: "tabletennis", name: "Table Tennis", category: "Indoor", image: "https://images.unsplash.com/photo-1534158914592-062992fbe900?w=500&q=80", facility: "Stag Tournament Grade Arena" },
+  { id: "horseriding", name: "Horse Riding", category: "Equestrian", image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&q=80", facility: "Private Equestrian Riding Paddock" },
+  { id: "billiards", name: "Billiards", category: "Indoor", image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500&q=80", facility: "Riley Professional Slate Tables" },
+  { id: "yoga", name: "Yoga & Meditation", category: "Wellness", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500&q=80", facility: "Tranquil Open-Air Pavilion" },
 ];
 
 export const beyondAcademicsItems = [

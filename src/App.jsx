@@ -1,10 +1,11 @@
-﻿// src/App.jsx
+// src/App.jsx
 // App root — scroll progress bar, custom cursor, navbar, page, footer.
 
 import { useScroll, useSpring, motion } from "framer-motion";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import CustomCursor from "./components/animation/CustomCursor";
+import FloatingSupport from "./components/common/FloatingSupport";
 import Home from "./pages/Home";
 
 export default function App() {
@@ -22,6 +23,9 @@ export default function App() {
 
       {/* Custom cursor (desktop only) */}
       <CustomCursor />
+
+      {/* Floating WhatsApp and Helpdesk support widget */}
+      <FloatingSupport />
 
       {/* Skip to content link for accessibility */}
       <a href="#main-content" className="skip-link">Skip to main content</a>
